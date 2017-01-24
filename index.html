@@ -9,23 +9,29 @@
     <title>EpiBank</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id=super-container>
       <div class="form">
-        <input type="text" id="user-name" name="user-name" value="">Your Name
-        <br>
-        <br>
-        <div class="radio">
-        <label>
-          <input type="radio" name="user-status" value="new" checked>
-          New User
-        </label>
+        <div class="container" id=inner-container1>
+          <h1>Banco Epicodus</h1>
+          <h3>Give us your monies</h3>
+          <input type="text" id="user-name" name="user-name" value="">Your Name
+          <br>
+          <br>
         </div>
-        <div class="radio">
-        <label>
-          <input type="radio" name="user-status" value="existing">
-          Existing User
-        </label>
-        <button type="submit" id="name-submit" name="button">Submit</button>
+        <div class="container" id=inner-container2>
+          <div class="radio">
+          <label>
+            <input type="radio" name="user-status" value="new" checked>
+            New User
+          </label>
+          </div>
+          <div class="radio">
+          <label>
+            <input type="radio" name="user-status" value="existing">
+            Existing User
+          </label>
+          <button type="submit" id="name-submit" name="button">Submit</button>
+          </div>
         </div>
         <br>
         <br>
@@ -36,10 +42,8 @@
           <input type="number" id="debit" name="debit" value="">Amount to Withdraw
           <input type="number" id="credit" name="credit" value="">Amount to Deposit
           <button type="submit" id="update-balance" name="button">Submit</button>
+          <button type="submit" id="logout" name="button">Logout</button>
         </div>
-      <div class="output">
-        <p>Your Current Balance is: <span id="current-balance"></span></p>
-      </div>
     </div>
   </body>
 </html>

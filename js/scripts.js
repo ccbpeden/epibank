@@ -4,6 +4,9 @@ var Account = function(userName) {
   this.userName = userName;
   this.userBalance = 0;
 }
+var myAccount = new Account("Charlie");
+myAccount.userBalance = 5000000;
+CurrentAccounts.push(myAccount);
 
 Account.prototype.changeBalance = function(inputAmount) {
   if (isNaN(inputAmount)){
@@ -18,9 +21,12 @@ Account.prototype.changeBalance = function(inputAmount) {
 var validateAccount = function(currentAccount) {
   return currentAccount
 }
-CurrentAccounts.find(validateAccount)
+
  Account.prototype.getBalance =function() {
-   return "$" + this.userBalance.toString();
+   var displayBalance = this.userBalance * 100;
+   displayBalance = Math.round(displayBalance);
+   displayBalance = (displayBalance / 100);
+   return "$" + displayBalance.toString();
 }
 
 
@@ -53,12 +59,17 @@ $(function() {
             alert("Account name not found")
           } else { //existing account name found
             //NEED TO DISPLAY ACCOUNT INFO
-
+            var greetingName = CurrentAccounts[userIndex].userName
+            var localBalance = CurrentAccounts[userIndex].userBalance
+            $(".balance-change").slideDown(2000);
+            $(".form").slideUp(2000);
+            $("#greeting").text(greetingName);
+            $("#current-balance").text(localBalance);
           }
         });
         $("#update-balance").click(function(){
-          var creditAmount = parseInt($("#credit").val());
-          var debitAmount = parseInt($("#debit").val());
+          var creditAmount = parseFloat($("#credit").val());
+          var debitAmount = parseFloat($("#debit").val());
           console.log(userIndex);
           CurrentAccounts[userIndex].changeBalance(creditAmount);
           CurrentAccounts[userIndex].changeBalance(0-debitAmount);
@@ -67,9 +78,10 @@ $(function() {
           $("#current-balance").text(outputBalance);
 
         })
-
-
-
+        $("#logout").click(function(){
+          $(".balance-change").slideUp(2000);
+          $(".form").slideDown(2000);
+        });
 
 
     });

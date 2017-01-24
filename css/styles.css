@@ -5,3 +5,16 @@
 .output {
   display: none;
 }
+
+#inner-container1 {
+  border: 2px solid red;
+
+}
+
+#inner-container2 {
+  border: 2px solid red;
+
+}
+body {
+  background-image:url('https://subtlepatterns.com/patterns/pink_rice.png');
+}
