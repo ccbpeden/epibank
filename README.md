@@ -1,6 +1,6 @@
 # _EPIBANK_
 
-#### By _**Charles Peden**_
+#### By _**Charles Peden & Jake D Campa**_
 
 ## Description
 
